@@ -9,8 +9,9 @@ app.use(express.json({ limit: "1000mb" }));
 
 
 
-
-const MONGO_URI = 'mongodb://localhost:27017/redfalcon_dummy';
+// mongodb+srv://abhayryadav0007:BRHL11RlilPRy77Q@cluster0.gh6cfhq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+// const MONGO_URI = 'mongodb://localhost:27017/redfalcon_dummy';
+const MONGO_URI = 'mongodb+srv://abhayryadav0007:BRHL11RlilPRy77Q@cluster0.gh6cfhq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
