@@ -73,6 +73,7 @@ const validatePhoneNumber = (phoneNumber) => {
 // User Registration
 export const signup = async (req, res) => {
   try {
+    console.log("📩 Incoming signup request:");
     const { name, email, contactNo, age, password, userType, selectedModes } = req.body;
 
     // Validate required fields
@@ -81,7 +82,7 @@ export const signup = async (req, res) => {
     }
 
 
-
+    console.log("📩 Incoming signup request:", req.body);
     // Validate and format phone number
     if (contactNo) {
       const phoneValidation = validatePhoneNumber(contactNo);
@@ -96,6 +97,7 @@ export const signup = async (req, res) => {
     // Check if user already exists
     const existingUser = await User.findOne({ email });
     if (existingUser) {
+      console.log("User already exists with email:", email);
       return res.status(400).json({ error: 'User already exists' });
     }
 

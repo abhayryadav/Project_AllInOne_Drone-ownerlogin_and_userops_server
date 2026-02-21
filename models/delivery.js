@@ -29,7 +29,6 @@ const deliverySchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId, // ✅ REFERENCES User._id
         ref: "User",
         required: true,
-        unique: true,
         index: true
   },
   pickupLocation: {
